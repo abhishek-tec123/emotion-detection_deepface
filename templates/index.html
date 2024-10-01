@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        video {
+            border: 2px solid #ccc;
+            width: 640px;
+            height: 480px;
+            display: none; /* Initially hide the video */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Emotion Detection</h1>
+    <p>Click the button to start emotion detection:</p>
+    
+    <!-- Start Detection Button -->
+    <button id="start_button">Start Detection</button>
+
+    <!-- Video Feed -->
+    <video id="video_feed" autoplay></video>
+    
+    <script>
+        const videoElement = document.getElementById('video_feed');
+        const startButton = document.getElementById('start_button');
+        
+        // Add click event to the Start Detection button
+        startButton.addEventListener('click', function() {
+            videoElement.src = "/video_feed"; // Start video feed
+            videoElement.style.display = "block"; // Show the video element
+            startButton.style.display = "none"; // Hide the button once video starts
+        });
+    </script>
+</body>
+</html>
